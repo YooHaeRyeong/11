@@ -22,9 +22,18 @@
                 background-attachment: fixed;
             }
 
+            em{
+                color: #ae0000;
+                font-style: normal;
+            }
+
             .navbar {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
                 background-color: #FFC600;
-                padding: 15px 60px;
+                padding: 15px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -35,7 +44,7 @@
                 font-size: 24px;
                 font-weight: bold;
                 text-decoration: none;
-                margin-left: 60px;
+                margin-left: 50px;
             }
 
             .nav-menu {
@@ -43,7 +52,7 @@
                 display: flex;
                 margin: 0;
                 padding: 0;
-                margin-right: 60px;
+                margin-right: 90px;
             }
 
             .nav-menu li {
@@ -91,14 +100,13 @@
             }
 
             .text-container h1 {
-                font-size: 34px;
-                margin-bottom: 20px;
-            
+                font-size: 30px;
+                margin: 0;
             }
 
             .text-container p {
                 font-size: 20px;
-    
+                margin: 0;
             }
 
             @keyframes shake {
@@ -118,9 +126,10 @@
             }
 
             .main-text-container {
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                position: absolute;
+                text-align: center;
+                color: white;
+                z-index: 2;
             }
 
             .step-text-container {
@@ -143,73 +152,89 @@
                 position: absolute;
                 width: 100%;
                 text-align: center;
-                top: 700px;
+                top: 580px;
+                left: 25px;
                 color: black;
                 z-index: 2;
             }
 
             .description-text p {
-                font-size: 24px;
-                line-height: 2.5;
+                font-size: 18px;
+                line-height: 2;
                 margin: 0;
+                color: #5e5e5e;
             }
 
             #img-9 {
-                width: 60%;
-                top: 380px;
-                left: 200px;
+                width: 54%;
+                top: 360px;
+                left: 240px;
                 z-index: 2;
             }
 
             #img-10 {
-                width: 100%;
-                top: -150px;
-                left: 0;
+                width: 98%;
+                top: -220px;
+                left: 20;
                 z-index: 1;
             }
 
             #img-11 {
                 width: 20%;
-                top: 400px;
+                top: 370px;
                 left: 18%;
                 z-index: 1;
             }
 
             #img-12 {
                 width: 20%;
-                top: 400px;
+                top: 370px;
                 left: 43%;
                 z-index: 1;
             }
 
             #img-13 {
                 width: 20%;
-                top: 400px;
+                top: 370px;
                 left: 68%;
                 z-index: 1;
             }
 
             #img-14 {
-                width: 100%;
-                top: 450px;
-                left: 0%;
+                width: 60%;
+                top: 240px;
+                left: -10%;
+                z-index: 3;
+            }
+
+            #img-15 {
+                width: 50%;
+                top: 390px;
+                left: 38%;
+                z-index: 1;
+            }
+
+            #img-16 {
+                width: 40%;
+                top: 570px;
+                left: 50%;
+                z-index: 2;
             }
 
             .input-section {
                 text-align: center;
-                padding: 100px 0;
-                margin-top: 300px;
+                padding: 300px 0;
                 background: transparent;
             }
 
             .input-section h2 {
                 color: #FFC600;
                 font-size: 28px;
-                margin-bottom: 30px;
+                padding-bottom: 30px;
             }
 
             .input-box {
-                width: 60%;
+                width: 80%;
                 height: 150px;
                 background-color: rgba(51, 51, 51, 0.7);
                 border: none;
@@ -225,7 +250,7 @@
                 display: inline-block;
                 color: #FFC600;
                 text-decoration: none;
-                font-size: 20px;
+                font-size: 18px;
                 padding: 10px 20px;
                 position: relative;
             }
@@ -262,7 +287,9 @@
             }
 
             .review-card {
-                background-color: rgba(255, 255, 255, 0.9);
+                /* background-color: rgba(255, 255, 255, 0.9); */
+                background-image: url(https://images.unsplash.com/photo-1545873508-d5fd902bda05?q=80&w=3273&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+                background-size: cover;
                 padding: 30px;
                 width: 300px;
                 min-height: 200px;
@@ -284,9 +311,10 @@
             }
 
             .review-text {
-                font-size: 16px;
+                font-size: 18px;
                 line-height: 1.6;
-                color: #333;
+                word-break: keep-all;
+                color: #470909;
             }
 
             footer {
@@ -300,19 +328,23 @@
             }
 
             .footer-title {
-                color: red;
-                font-size: 24px;
+                color: rgb(212, 35, 35);
+                font-size: 20px;
                 margin-bottom: 20px;
             }
 
             .footer-info {
-                color: white;
-                font-size: 16px;
+                color: rgb(188, 188, 188);
+                font-size: 12px;
                 line-height: 1.8;
             }
 
             .footer-info p {
                 margin: 5px 0;
+            }
+
+            html {
+                scroll-behavior: smooth;
             }
         </style>
     </head>
@@ -320,29 +352,32 @@
         <nav class="navbar">
             <a href="#" class="logo">O.S.S</a>
             <ul class="nav-menu">
-                <li><a href="#">step1</a></li>
-                <li><a href="#">step2</a></li>
-                <li><a href="#">step3</a></li>
-                <li><a href="#">step4</a></li>
+                <li><a href="#step1">step1</a></li>
+                <li><a href="#step2">step2</a></li>
+                <li><a href="#step3">step3</a></li>
+                <li><a href="#step4">step4</a></li>
             </ul>
         </nav>
         <section>
             <div class="wrap">
-                <div class="text-container main-text-container">
-                    <h1 style="padding-top: 50px;">거래가 성사되었습니다.^^ 환영합니다~</h1>
-                    <p style="padding-top: 550px;">기회 잡기 의뢰는 다음과 같이 진행됩니다.</p>
+                <div class="text-container" style="top: 130px; left: 49%; transform: translateX(-50%);">
+                    <h1>거래가 성사되었습니다.^^ 환영합니다~</h1>
                 </div>
                 <div class="image-container">
                     <img src="img_8.png" alt="animated image" class="animated-image" style="top: 200px;">
+                    <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmM1bW9rc2dlMnVxNXZkZTFiMmhkbjlicmd2YzV2aXhrcjM5emdyNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/v3d7RlrQJPBWDheFLI/giphy.gif">
+                </div>
+                <div class="text-container" style="top: 760px; left: 49%; transform: translateX(-50%);">
+                    <p style="color:#5e5e5e">기회 잡기 의뢰는 다음과 같이 진행됩니다.</p>
                 </div>
             </div>
         </section>
-        <section>
+        <section class="step1" id="step1">
             <div class="wrap">
                 <div class="text-container step-text-container">
                     <div class="title-container">
                         <h1>step1</h1>
-                        <h1>기회 의뢰 접수</h1>
+                        <h1 style="padding-bottom: 40px;">기회 의뢰 접수</h1>
                     </div>
                     <p>당신이 놓친 기회를 분석하고, 어떤 방법으로 되찾을지 결정합니다.</p>
                 </div>
@@ -352,12 +387,12 @@
                 </div>
             </div>
         </section>
-        <section>
-            <div class="wrap" style="padding-top: 250px;">
+        <section class="step2" id="step2">
+            <div class="wrap" style="padding-top: 180px;">
                 <div class="text-container step-text-container">
                     <div class="title-container">
                         <h1>step2</h1>
-                        <h1>작전 수행 / 기회 밀수 진행</h1>
+                        <h1 style="padding-bottom: 40px;">작전 수행 / 기회 밀수 진행</h1>
                     </div>
                     <p>숙련된 전문 밀수팀이 기회를 되찾기 위한 맞춤형 작전을 수행합니다.</p>
                 </div>
@@ -367,43 +402,49 @@
                     <img src="img_13.png" id="img-13">
                 </div>
                 <div class="description-text" style="padding-top: 400px; color: white;">
-                    <p>비공식 정보망, 연줄, 비밀 커넥션등을 이용해<br>
+                    <p>*비공식 정보망, 연줄, 비밀 커넥션등을 이용해
                     합법과 불법 사이를 유연하게 넘나드는 방식으로 기회를 확보합니다.</p>
                 </div>
             </div>
         </section>
-        <section>
-            <div class="wrap" style="padding-bottom: 400px;">
+        <section class="step3" id="step3">
+            <div class="wrap" style=" padding-top: 20px;">
                 <div class="text-container step-text-container">
                     <div class="title-container">
                         <h1>step3</h1>
-                        <h1>기회 전달</h1>
+                        <h1 style="padding-bottom: 40px;">기회 전달</h1>
                     </div>
                     <p>성공적으로 회수된 기회를 은밀하고 안전하게 전달합니다.</p>
                 </div>
                 <div class="image-container">
                     <img src="img_14.png" id="img-14">
+                    <img src="img_15.png" id="img-15">
+                    <img src="img_16.png" id="img-16">
                 </div>
             </div>
         </section>
-        <section class="input-section wrap" style="padding-top: 500px;">
-            <h2>그럼, 이제 당신의 의뢰 사항을 들려주세요.</h2>
-            <textarea class="input-box" placeholder="의뢰 내용을 입력하세요..."></textarea>
-            <div>
-                <a href="#" class="submit-btn">기회 잡으러 가기</a>
-            </div>
+        <section class="step4" id="step4" style="text-align: center;">
+            <section class="input-section wrap" style="padding: 300px 0;">
+                <div style="background-image: url(https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXgwMGRvMmdtZDhqZHoxYXl5OWZkbGg4dzFtcW94bjh2Z2t4aDR5MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5Wkx9KmagzyX892z1K/giphy.gif); background-size: 360px 360px; background-repeat: repeat; padding: 250px; text-align: center;">
+                    <h2>그럼, 이제 당신의 의뢰 사항을 들려주세요.</h2>
+                    <textarea class="input-box" placeholder="의뢰 내용을 입력하세요..."></textarea>
+                    <div>
+                        <a href="#" class="submit-btn">기회 잡으러 가기</a>
+                    </div>
+                </div>
+            </section>
         </section>
-        <section class="review-section"  style="padding-left: 200px; padding-top: 10px; padding-bottom: 200px;">
+        <section class="review-section" style="padding-left: 200px; padding-top: 300px; padding-bottom: 200px;">
             <h2 class="review-title">고객후기</h2>
             <div class="review-container">
                 <div class="review-card">
-                    <p class="review-text">그 여자와 결혼한 제 첫사랑을 되찾고 싶었어요. 3년전에 좋아했는데 놓쳐서 아쉬웠던 그, 도덕적이지는 않았지만 확실한 기회를 만들어주셨어요. 그가 그 여자와 이혼하고 내게 오도록요.</p>
+                    <p class="review-text">그 여자와 결혼한 제 첫사랑을 되찾고 싶었어요. 3년전에 좋아했는데 놓쳐서 아쉬웠던 그, 도덕적이지는 않았지만 확실한 기회를 만들어주셨어요. <em>그가 그 여자와 이혼하고 내게 오도록요.</em></p>
                 </div>
                 <div class="review-card">
-                    <p class="review-text">값이 오르기 전 그 땅 살걸.. 했는데 이런 기회까지 되찾아주다니요..! S.S.O의 부동산 브로커가 동일 조건의 땅을 찾아줬어요. 조금 불법적이었지만, 뭐, 상관없잖아요?</p>
+                    <p class="review-text">값이 오르기 전 그 땅 살걸.. 했는데 이런 기회까지 되찾아주다니요..! S.S.O의 부동산 브로커가 동일 조건의 땅을 찾아줬어요. <em>조금 불법적이었지만, 뭐, 상관없잖아요?</em></p>
                 </div>
                 <div class="review-card">
-                    <p class="review-text">와 진짜 작년에 놓친 한정판 스니커즈가 찾아왔어요. 아무도 팔지 않을텐데 어떻게 구하신건가요? 피가 묻어 있어서 중고같긴 하지만, 중고라도 감지덕지라 만족합니다~~</p>
+                    <p class="review-text">와 진짜 작년에 놓친 한정판 스니커즈가 찾아왔어요. 아무도 팔지 않을텐데 어떻게 구하신건가요? <em>피가 묻어 있어서 중고같긴 하지만, 중고라도 감지덕지라 만족합니다~~</em></p>
                 </div>
             </div>
         </section>

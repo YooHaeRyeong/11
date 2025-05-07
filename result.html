@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>🥷🏼기회 밀수 조직 O.S.S 🥷🏼</title>
+    <style>
+        body {
+            background: #111 url('bg-img.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #FFD700;
+            font-family: 'BookkMyungjo-Bd', serif;
+            margin: 0;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .title {
+            font-size: 2rem;
+            padding-bottom: 30px;
+            padding-top: 80px;
+            color: #FFD700;
+        }
+        .gray-box {
+            width: 50%;
+            height: 100px;
+            background-color: rgba(51, 51, 51, 0.7);
+            border: none;
+            color: white;
+            font-size: 20px;
+            margin-bottom: 80px;
+            resize: none;
+            font-family: 'BookkMyungjo-Bd', serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            word-break: break-all;
+        }
+        .estimate-title {
+            font-size: 2rem;
+            padding-bottom: 30px;
+            color: #FFD700;
+        }
+        .estimate-box {
+            background: #F44336;
+            color: #FFD700;
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 20px 125px;
+            margin-bottom: 120px;
+        }
+        .desc {
+            color: #9e8b24;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            text-align: center;
+            line-height: 2;
+        }
+        .question {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-top: 30px;
+        }
+        #estimate-area {
+            text-align: center;
+        }
+        .estimate-title,
+        .estimate-box,
+        .desc,
+        .question {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .exit-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 36px;
+            background: #4e4d49;
+            color: #eae1e1;
+            font-size: 20px;
+            font-family: 'BookkMyungjo-Bd', serif;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+        }
+        .exit-btn:hover {
+            background: #FFC600;
+            color: #fff;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">당신의 의뢰 사항</div>
+        <div class="gray-box" id="user-content"></div>
+        <div id="estimate-area">
+            <div class="estimate-title">예상 견적</div>
+            <div class="estimate-box">22, 222,000,000,000,000,000 $</div>
+            <div class="desc">
+                *지불할 능력이 있는 분만 저희를 찾아주세요.^^*<br>
+            </div>
+        </div>
+        <a href="index2.html#step4" class="exit-btn">나가기</a>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const content = params.get('content') || '';
+        const userContent = document.getElementById('user-content');
+        const estimateArea = document.getElementById('estimate-area');
+        if (!content.trim()) {
+            userContent.textContent = '의뢰 내용이 없습니다.';
+            estimateArea.style.display = 'none';
+        } else {
+            userContent.textContent = content;
+            estimateArea.style.display = '';
+        }
+    </script>
+</body>
+</html> 
